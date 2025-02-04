@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>À propos de moi - Olivier DANTAL</title>
+ 
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        .header-image {
+            width: 100%;
+            height: 300px;
+            background: url('image.png') center/cover no-repeat;
+            position: relative;
+        }
+        .header-image::after {
+            content: "▼";
+            font-size: 30px;
+            color: white;
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .sidebar {
+            width: 250px;
+            min-height: 100vh;
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 20px;
+            position: fixed;
+        }
+        .sidebar h3 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+        }
+        .sidebar ul li i {
+            width: 20px;
+        }
+        .sidebar ul li:hover {
+            background-color: #34495e;
+        }
+        .content {
+            margin-left: 270px;
+            padding: 20px;
+        }
+        .category-section {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            min-height: 600px;
+            margin-bottom: 40px;
+        }
+        h2 {
+            text-align: center;
+            color: #2c3e50;
+            font-weight: bold;
+        }
+        h3 {
+            color: #2c3e50;
+            font-size: 1.5rem;
+            margin-top: 20px;
+        }
+        p, ul {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        .about-me, .parcours-section {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 40px;
+        }
+        .about-me ul, .parcours-section ul {
+            padding-left: 20px;
+        }
+        .about-me ul li, .parcours-section ul li {
+            margin-bottom: 10px;
+        }
+        .btn-dark {
+            margin: 10px;
+        }
+        .text-center i {
+            margin: 10px;
+        }
+
+        
+        h2 {
+            text-align: center;
+            color: #2c3e50;
+            font-weight: bold;
+        }
+        h3, h4 {
+            color: #2c3e50;
+        }
+        p, ul {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 10px;
+            top: 0;
+            width: 4px;
+            height: 100%;
+            background: #2c3e50;
+            border-radius: 2px;
+        }
+        .timeline-item {
+            margin-bottom: 20px;
+            position: relative;
+            padding-left: 20px;
+        }
+        .timeline-item::before {
+            content: "●";
+            position: absolute;
+            left: -5px;
+            color: #2c3e50;
+            font-size: 18px;
+        }
+       
+.stages-section {
+    padding: 50px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    max-width: 900px;
+    margin: auto;
+}
+
+
+.section-title {
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    text-align: center;
+    font-style: italic;
+    color: #777;
+    margin-bottom: 30px;
+}
+
+
+.experiences {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+
+.stage {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+
+.stage-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.stage-header h3 {
+    margin: 0;
+    font-size: 20px;
+    color: #333;
+}
+
+.stage-date {
+    background: #e0e0e0;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+
+.stage-description {
+    color: #555;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+
+.stage-info {
+    list-style: none;
+    padding-left: 0;
+}
+
+.stage-info li {
+    margin-bottom: 5px;
+}
+
+.stage-info a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.stage-info a:hover {
+    text-decoration: underline;
+}
+
+
+.details-button {
+    background: none;
+    border: none;
+    color: #007bff;
+    font-size: 16px;
+    cursor: pointer;
+    display: block;
+    margin: 10px auto;
+}
+
+.details {
+    display: none;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.details img {
+    max-width: 200px;
+    border-radius: 5px;
+}
+
+
+.details-button:hover {
+    text-decoration: underline;
+}
+
+    </style>
+</head>
+<body>
+
+    <div class="sidebar">
+        <h3>Olivier DANTAL</h3>
+        <div class="text-center">
+            <i class="fas fa-clock"></i> <span id="datetime"></span>
+        </div>
+        <div class="text-center mt-3">
+            <i class="fab fa-whatsapp"></i>
+            <i class="fab fa-github"></i>
+            <i class="fab fa-google"></i>
+            <i class="fab fa-linkedin"></i>
+        </div>
+        <ul>
+            <li onclick="scrollToSection('header-image')"><i class="fas fa-home"></i> Accueil</li>
+            <li onclick="scrollToSection('profil')"><i class="fas fa-user"></i> Profil</li>
+            <li onclick="scrollToSection('parcours')"><i class="fas fa-route"></i> Parcours</li>
+            <li onclick="scrollToSection('stages')"><i class="fas fa-briefcase"></i> Stages</li>
+            <li onclick="scrollToSection('competences')"><i class="fas fa-cogs"></i> Compétences</li>
+            <li onclick="scrollToSection('veille')"><i class="fas fa-lightbulb"></i> Veille Technologique</li>
+            <li onclick="scrollToSection('projets')"><i class="fas fa-code"></i> Projets</li>
+            <li onclick="scrollToSection('bts-sio')"><i class="fas fa-graduation-cap"></i> BTS SIO</li>
+            <li onclick="scrollToSection('epreuves')"><i class="fas fa-file-alt"></i> Épreuves</li>
+            <li onclick="scrollToSection('contact')"><i class="fas fa-envelope"></i> Contact</li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <div id="header-image" class="header-image"></div>
+
+        <div id="profil" class="category-section">
+            <h2>A PROPOS DE MOI <i class="fas fa-brain"></i></h2>
+            <p>Je suis étudiant en 1ère année de <strong>BTS SIO</strong> à Saint Aspais <strong>BTS SIO</strong> (Services Informatiques aux Organisations), spécialité <strong>SLAM</strong> (Solutions logicielles et applications métiers).</p>
+            <p>J’ai toujours eu une appétence pour l’informatique et une curiosité pour les nouvelles technologies. C’est tout naturellement que je me suis tourné vers cette formation, après avoir obtenu mon <strong>BAC STMG - Mention Assez Bien</strong> en 2023.</p>
+
+            <h3>- Étudiant en BTS SIO (2024 - 2025) <i class="fas fa-user-graduate"></i></h3>
+            <p><em>Étudiant en 1ère année en BTS SIO - option SLAM à Saint Aspais.</em></p>
+            <ul>
+                <li><strong>École :</strong> Saint Aspais</li>
+                <li><strong>Diplômes :</strong> Bac STMG - Mention Assez Bien</li>
+                <li><strong>Téléphone :</strong> 07 67 17 38 96</li>
+                <li><strong>Email :</strong> <a href="travaildirect36@gmail.com">travaildirect36@gmail.com</a></li>
+            </ul>
+
+            <h3>- Projet Professionnel <i class="fas fa-building"></i></h3>
+            <p>Professionnellement, je souhaite m’orienter vers le métier de <strong>« Développeur »</strong>.</p>
+            <p>Après l’obtention de mon <strong>BTS SIO - BAC+2</strong>, je souhaiterais poursuivre mon cursus en suivant la formation <strong>License - BAC+3</strong></p>
+            <p>L'ensemble de cette formation est dispensé à l’école ORT Daniel Mayer à Montreuil.</p>
+
+            <h4>Mon stage me permettra :</h4>
+            <ul>
+                <li>D’acquérir une expérience professionnelle et de confronter mes connaissances théoriques aux réalités du terrain.</li>
+                <li>Le monde de l’entreprise est toujours en mouvement, ce stage m'offre la possibilité de participer au développement de nouveaux projets.</li>
+                <li>Dans un environnement chaotique, le sujet de la cybersécurité est un enjeu majeur pour les entreprises pour la sécurisation et le traitement de leurs données.</li>
+            </ul>
+
+            <div class="text-center mt-4">
+                <button class="btn btn-dark">Consulter CV</button>
+                <button class="btn btn-dark">Télécharger CV</button>
+            </div>
+        </div>
+
+        <div id="parcours" class="parcours-section"> 
+            <h2>Parcours <i class="fas fa-graduation-cap"></i></h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h4>BTS SIO (2024 - A ce jour)</h4>
+                    <p>Spécialité SLAM à Saint Aspais</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>Lycée Sonia Delaunay (2022 - 2024)</h4>
+                    <p>Bac STMG - Mention Assez Bien</p>
+                   
+                </div>
+                <div class="timeline-item">
+                    <h4>Collège (2020 - 2021)</h4>
+                    <p>Collège </p>
+                </div>
+            </div>
+
+            <h2>Centre d'intérêt <i class="fas fa-running"></i></h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h4>SPORT</h4>
+                    <p>La pratique du sport collectif, outre l’aspect physique, me permet d’avoir un esprit d’équipe.</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>VOYAGE</h4>
+                    <p>La découverte de nouvelles cultures apporte une ouverture sur le monde et favorise l’exploration des nouvelles technologies.</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>MUSIQUE</h4>
+                    <p>J’écoute de la musique quotidiennement.</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>REGARDER DES FILMS ET SÉRIES EN VO</h4>
+                    <p>Regarder des films en VO améliore mes compétences linguistiques, notamment en anglais.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section id="stages" class="stages-section">
+        <h2 class="section-title">🎓 Stages</h2>
+        <p class="section-subtitle">Les 2 stages réalisés au cours de ma formation.</p>
+    
+        <div class="experiences">
+            
+            <div class="stage">
+                <div class="stage-header">
+                    <h3>📌 STAGE Mairie</h3>
+                    <span class="stage-date">2025 (6 semaines)</span>
+                </div>
+                <p class="stage-description">
+                    <strong>Stage BTS SIO 1ère année.</strong><br>
+                    Stage suivi dans la <strong>Mairie</strong> au sein du service Réseau et Développement.
+                </p>
+                <ul class="stage-info">
+                    <li>📍 Mairie : <a href="8 rte St Leu, 77240 Cesson" target="_blank">8 rte Leu,77240 Cesson</a></li>
+                    <li>📍 Mairie : <a href="8 rte St Leu, 77240 Cesson" target="_blank">8 rte Leu,77240 Cesson</a></li>
+                    <li>🌐 <a href="https://www.ville-cesson.fr/2/accueil.htm" target="_blank">www.ville-cesson.fr</a></li>
+                </ul>
+                <button class="details-button">▼ A propos du stage ▼</button>
+                <div class="details">
+                    <img src="C:\Users\utilisateur\Pictures\cesson-77-.webp" alt="Logo Mairie">
+                </div>
+            </div>
+    
+            <div class="stage">
+                <div class="stage-header">
+                    <h3>📌 STAGE Mairie</h3>
+                    <span class="stage-date">2025 (6 semaines)</span>
+                </div>
+                <p class="stage-description">
+                    <strong>Stage BTS SIO 2ème année.</strong><br>
+                    Stage suivi dans la <strong>Mairie</strong> au sein du service Réseau et Développement.
+                </p>
+                <ul class="stage-info">
+                    <li>📍 Mairie : <a href="8 rte St Leu, 77240 Cesson" target="_blank">8 rte Leu,77240 Cesson</a></li>
+                    <li>📍 Mairie : <a href="8 rte St Leu, 77240 Cesson" target="_blank">8 rte Leu,77240 Cesson</a></li>
+                    <li>🌐 <a href="https://www.ville-cesson.fr/2/accueil.htm" target="_blank">www.ville-cesson.fr</a></li>
+                </ul>
+                <button class="details-button">▼ A propos du stage ▼</button>
+                <div class="details">
+                    <img src="C:\Users\utilisateur\Pictures\cesson-77-.webp" alt="Logo Mairie">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <script>
+        function updateDateTime() {
+            const now = new Date();
+            document.getElementById("datetime").innerText = now.toLocaleString("fr-FR", {
+                weekday: "long", year: "numeric", month: "long", day: "numeric", hour: "2-digit", minute: "2-digit", second: "2-digit"
+            });
+        }
+        setInterval(updateDateTime, 1000);
+        updateDateTime();
+
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    </script>
+      <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const buttons = document.querySelectorAll(".details-button");
+    
+        buttons.forEach(button => {
+            button.addEventListener("click", function () {
+                const details = this.nextElementSibling;
+                if (details.style.display === "block") {
+                    details.style.display = "none";
+                } else {
+                    details.style.display = "block";
+                }
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mes Compétences</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+       
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            color: #343a40;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .skills-container {
+            padding: 40px;
+            max-width: 1200px;
+            margin: auto;
+        }
+        
+        .skills-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+
+        .skills-container p {
+            text-align: center;
+            font-size: 1rem;
+            color: #6c757d;
+            margin-bottom: 30px;
+        }
+
+      
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .filter-buttons button {
+            border: none;
+            padding: 12px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .filter-buttons button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        .filter-buttons button.active {
+            background-color: #0056b3;
+        }
+
+        .certificates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        
+        .certificate-card {
+            border: none;
+            border-radius: 12px;
+            overflow: hidden;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .certificate-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .certificate-card img {
+            width: 100%;
+            height: auto;
+        }
+
+        .certificate-card h5 {
+            padding: 15px;
+            font-size: 1.2rem;
+            text-align: center;
+            font-weight: bold;
+            color: #343a40;
+        }
+    </style>
+</head>
+<body>
+    <div class="skills-container">
+        <h1 class="skills-title"id="competences">Mes compétences</h1>
+        <p>Au cours de mon cursus, j'ai pu obtenir plusieurs certifications et diplômes que vous trouverez ci-dessous.</p>
+
+        
+        <div class="filter-buttons">
+            <button class="active" data-filter="all">Tous</button>
+            <button data-filter="linux">Linux</button>
+            <button data-filter="cisco">Cisco</button>
+            <button data-filter="mooc">MOOC ANSSI</button>
+            <button data-filter="rgpd">MOOC RGPD CNIL</button>
+            <button data-filter="google">Google</button>
+        </div>
+
+        <div class="certificates-grid">
+           
+            <div class="certificate-card" data-category="linux">
+                <img src="C:\Users\utilisateur\Desktop\Portfolio final\images\linuxx(1).jpg"alt="Certification Linux">
+                <h5>Certification Linux</h5>
+            </div>
+            <div class="certificate-card" data-category="cisco">
+                <img src="C:\Users\utilisateur\Pictures\OIP (3).jpg" alt="Certification Cisco">
+                <h5>Certification Cisco</h5>
+            </div>
+            <div class="certificate-card" data-category="mooc">
+                <img src="C:\Users\utilisateur\Pictures\squad-mooc-anssi-03.png" alt="MOOC ANSSI">
+                <h5>MOOC ANSSI</h5>
+            </div>
+            <div class="certificate-card" data-category="rgpd">
+                <img src="certificat-rgpd.jpg" alt="MOOC RGPD CNIL">
+                <h5>MOOC RGPD CNIL</h5>
+            </div>
+            <div class="certificate-card" data-category="google">
+                <img src="certificat-google.jpg" alt="Certification Google">
+                <h5>Certification Google</h5>
+            </div>
+        </div>
+    </div>
+
+    <script>
+       
+        document.querySelectorAll('.filter-buttons button').forEach(button => {
+            button.addEventListener('click', () => {
+                document.querySelectorAll('.filter-buttons button').forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                const filter = button.getAttribute('data-filter');
+                document.querySelectorAll('.certificate-card').forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+  <style>
+       
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            color: #343a40;
+            margin: 0;
+            padding: 0;
+        }
+
+        .skills-section {
+            padding: 40px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .skills-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        .skills-section p {
+            text-align: center;
+            font-size: 1rem;
+            color: #6c757d;
+            margin-bottom: 40px;
+        }
+
+        .skills-subtitle {
+            font-size: 1.8rem;
+            color: #0056b3;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+       
+        .icon-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .icon-card {
+            text-align: center;
+            max-width: 150px;
+        }
+
+        .icon-card img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 2px solid #007bff;
+            padding: 10px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .icon-card img:hover {
+            transform: scale(1.1);
+        }
+
+        .icon-card h5 {
+            font-size: 1.1rem;
+            margin-top: 10px;
+            font-weight: bold;
+            color: #343a40;
+        }
+
+        .icon-card p {
+            font-size: 0.9rem;
+            color: #6c757d;
+        }
+    </style>
+</head>
+<body>
+       
+        <h2 class="skills-subtitle">Langages Pratiqués 👨‍💻</h2>
+        <div class="icon-container">
+            <div class="icon-card">
+                <img src="C:\Users\utilisateur\Desktop\Portfolio final\images\unnamed.png" alt="HTML5">
+                <h5>HTML</h5>
+                <p>Langage de balisage WEB.</p>
+            </div>
+            <div class="icon-card">
+                <img src="C:\Users\utilisateur\Desktop\Portfolio final\images\unnamed.jpg" alt="CSS3">
+                <h5>CSS</h5>
+                <p>Langage de mise en forme des pages WEB.</p>
+            </div>
+            <div class="icon-card">
+                <img src="C:\Users\utilisateur\Desktop\Portfolio final\images\unnamed (1).jpg" alt="JavaScript">
+                <h5>JAVASCRIPT</h5>
+                <p>Langage de programmation de scripts WEB.</p>
+            </div>
+        </div>
+
+       
+        <h2 class="skills-subtitle">Outils/Logiciels Utilisés ⚙️</h2>
+        <div class="icon-container">
+            <div class="icon-card">
+                <img src="C:\Users\utilisateur\Desktop\Portfolio final\images\png-transparent-bash-git-computer-icons-installation-command-line-interface-github-text-logo-windows.png">
+                <h5>Git Bash</h5>
+                <p>Outil de ligne de commande Git.</p>
+            </div>
+            <div class="icon-card">
+                <img src="C:\Users\utilisateur\Desktop\Portfolio final\images\OIP.jpg" alt="MySQL">
+                <h5>MySQL</h5>
+                <p>Gestion des bases de données.</p>
+            </div>
+            <div class="icon-card">
+                <img src="C:\Users\utilisateur\Desktop\Portfolio final\images\OIP (1).jpg" alt="PHP">
+                <h5>PHP</h5>
+                <p>Serveur Web local et outils associés.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<div id="veille" class="section"> 
+    <section id="parcours">
+    <h2>Veille Technologique <i class="fas fa-lightbulb"></i></h2>
+    <p>La veille technologique consiste à surveiller les innovations dans le domaine de l'informatique.</p>
+    <h4>Dernières tendances :</h4>
+    <ul>
+        <li>Cybersécurité : nouvelles stratégies de protection des données.</li>
+        <li>Cloud computing : les évolutions des infrastructures.</li>
+        <li>Intelligence artificielle : impact sur les entreprises.</li>
+    </ul>
+</div>
+</div>
+</section>
+<script>
+function scrollToSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+    }
+}
+</script>
+<style>
+#veille {
+    background-color: #ffffff;
+    padding: 40px;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+</style>
