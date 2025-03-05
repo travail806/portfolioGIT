@@ -323,6 +323,7 @@
     <button class="btn btn-dark" onclick="window.open('./cv.pdf', '_blank')">Consulter CV</button> 
     <a href="./cv.pdf" download="cv.pdf">
         <button class="btn btn-dark">Télécharger CV</button>
+        <button class="btn btn-dark" onclick="window.open('./cv.pdf', '_blank')">Lettre de Motivation</button> 
     </a>
 </div>
  </div>
@@ -771,3 +772,132 @@ function scrollToSection(sectionId) {
     margin-right: auto;
 }
 </style>
+<style>
+    #projets {
+        padding: 50px;
+        background: #f4f4f9;
+        border-radius: 10px;
+        max-width: 1000px;
+        margin: 40px auto;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    #projets h2 {
+        text-align: center;
+        font-size: 28px;
+        color: #2c3e50;
+        margin-bottom: 40px;
+    }
+    
+    .experiences {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .stage {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+        position: relative;
+        overflow: hidden;
+        transition: transform 0.3s ease-in-out;
+    }
+    
+    .stage:hover {
+        transform: translateY(-5px);
+    }
+    
+    .stage-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 2px solid #007bff;
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+    }
+    
+    .stage-header h3 {
+        margin: 0;
+        font-size: 22px;
+        color: #2c3e50;
+    }
+    
+    .stage-date {
+        background: #007bff;
+        padding: 5px 10px;
+        border-radius: 5px;
+        color: white;
+        font-size: 14px;
+    }
+    
+    .stage-description {
+        color: #555;
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+    
+    .stage-info {
+        list-style: none;
+        padding-left: 0;
+    }
+    
+    .stage-info li {
+        margin-bottom: 5px;
+        font-size: 14px;
+    }
+    
+    .stage-info a {
+        color: #007bff;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    
+    .stage-info a:hover {
+        text-decoration: underline;
+    }
+    </style>
+    
+    <div id="projets" class="category-section">
+        <h2>Projets <i class="fas fa-code"></i></h2>
+        <div class="experiences">
+            <div class="stage">
+                <div class="stage-header">
+                    <h3>Projet Portfolio</h3>
+                    <span class="stage-date">2024</span>
+                </div>
+                <p class="stage-description">Création d'un site web personnel pour présenter mon parcours, compétences et projets.</p>
+                <ul class="stage-info">
+                    <li><strong>Technologies :</strong> HTML, CSS, JavaScript</li>
+                    <li><a href="https://github.com/olivierdantal/portfolio" target="_blank">Voir le projet</a></li>
+                </ul>
+            </div>
+    
+            <div class="stage">
+                <div class="stage-header">
+                    <h3>Koo de Fourchette</h3>
+                    <span class="stage-date">2024</span>
+                </div>
+                <p class="stage-description">Site de recettes de cuisine permettant aux utilisateurs de consulter différentes recettes et d'ajouter leurs propres plats.</p>
+                <ul class="stage-info">
+                    <li><strong>Technologies :</strong> HTML, CSS</li>
+                    <li><a href="https://github.com/olivierdantal/koo-de-fourchette" target="_blank">Voir le projet</a></li>
+                </ul>
+            </div>
+    
+            <div class="stage">
+                <div class="stage-header">
+                    <h3>Projets futurs</h3>
+                    <span class="stage-date">À venir</span>
+                </div>
+                <p class="stage-description">Des projets en cours de réflexion pour approfondir mes compétences en développement web et applications.</p>
+                <ul class="stage-info">
+                    <li>Application de gestion de stock</li>
+                    <li>Blog personnel avec système de commentaires</li>
+                    <li>Site e-commerce simplifié</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
